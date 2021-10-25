@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="Tmuniciipios">
+<item></item>
+
+        <item>Elije Opcion</item>
+
+        <item>Tultitlan</item>
+        <item>Toluca</item>
+        <item>Tlalnepantla</item>
+        <item>Texcoco</item>
+        <item>Nezahualcóyotl</item>
+        <item>Naucalpan</item>
+        <item>La Paz</item>
+        <item>Ixtapaluca</item>
+        <item>Ecatepec</item>
+        <item>Cuautitlán Izcalli</item>
+        <item>Coacalco</item>
+        <item>Chicoloapan</item>
+        <item>Chalco</item>
+
+
+
+
+    </string-array>
+</resources>

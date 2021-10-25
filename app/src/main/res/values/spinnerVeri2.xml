@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="Municipios">
+        <item></item>
+        <item>Elije Opcion</item>
+        <item>Acolman</item>
+        <item>Amecameca</item>
+        <item>Atizapán de Zaragoza</item>
+        <item>Atlacomulco</item>
+        <item>Chalco</item>
+        <item>Chicoloapan</item>
+        <item>Chimalhuacán</item>
+        <item>Coacalco</item>
+        <item>Cuautitlán Izcallí</item>
+        <item>Ecatepec</item>
+        <item>Huixquilucan</item>
+        <item>Ixtapaluca</item>
+        <item>Jilotepec</item>
+        <item>La Paz</item>
+        <item>Melchor Ocampo</item>
+        <item>Metepec</item>
+        <item>Naucalpan</item>
+        <item>Nezahualcóyotl</item>
+        <item>Nicolas Romero</item>
+        <item>Santiago Tianguistenco</item>
+        <item>Tecamac</item>
+        <item>Tenancingo</item>
+        <item>Teoloyucan</item>
+        <item>Teotihuacan</item>
+        <item>Tepotzotlán</item>
+        <item>Texcoco</item>
+        <item>Teotihuacan</item>
+        <item>Tepotzotlán</item>
+        <item>Texcoco</item>
+        <item>Tlanepantla</item>
+        <item>Toluca</item>
+        <item>Tultepec</item>
+        <item>Tultitlan</item>
+        <item>Valle De Chalco Solidaridad</item>
+        <item>Zumpango</item>
+
+
+
+
+
+
+    </string-array>
+</resources>

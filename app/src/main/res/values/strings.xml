@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">VeriApp</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="label1">Consulta calendario de verificacion en el estado de México:</string>
+    <string name="label2">Terminación de placa</string>
+    <!-- TODO: Remove or change this placeholder text -->
+
+</resources>
