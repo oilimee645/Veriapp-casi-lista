@@ -57,8 +57,8 @@
         app:layout_constraintVertical_bias="0.301"></Spinner>
 
     <TableLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="340dp"
+        android:layout_height="244dp"
         android:layout_centerHorizontal="true"
         android:background="@drawable/borde"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -66,7 +66,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
 
-        >
+        app:layout_constraintVertical_bias="0.56">
 
         <TableRow
 
@@ -77,7 +77,7 @@
             <TextView
 
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
                 android:gravity="center"
                 android:text="Periodo"
                 android:textSize="20sp"
@@ -87,13 +87,13 @@
         <TableRow
             android:id="@+id/celda1"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:background="#ffffff"
             android:gravity="center">
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
                 android:gravity="center"
                 android:text="Enero/Febrero - Julio/Agosto"
                 android:textSize="16sp"
@@ -109,7 +109,7 @@
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
                 android:gravity="center"
                 android:text="Febrero/Marzo - Agosto/Septiembre"
                 android:textSize="16sp"
@@ -125,7 +125,7 @@
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
                 android:gravity="center"
                 android:text="Marzo/Abril - Septiembre/Octubre"
                 android:textSize="16sp"
@@ -141,7 +141,7 @@
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
                 android:gravity="center"
                 android:text="Abril/Mayo - Octubre/Noviembre"
                 android:textSize="16sp"
@@ -151,13 +151,13 @@
         <TableRow
             android:id="@+id/celda5"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="66dp"
             android:background="#ffffff"
             android:gravity="center">
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
                 android:gravity="center"
                 android:text="Mayo/Junio - Noviembre/Diciembre"
                 android:textSize="16sp"

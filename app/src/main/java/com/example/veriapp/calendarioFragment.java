@@ -38,7 +38,7 @@ public class calendarioFragment extends Fragment {
     private PendingIntent pendingIntent;
     private final static String CHANNEL_ID = "NOTIFICACION";
     private final static int NOTIFICACION_ID = 0;
-    String link="https://sma.edomex.gob.mx/sites/sma.edomex.gob.mx/files/files/TramitesServicios/VerificacioVehicular/2021/2doSemestre/Pvvo%202do%20Semestre%202021.pdf";
+    String link="https://drive.google.com/file/d/1ynXRFEOkUbSuGgGkPIzYJWT0KcebC4Pz/view";
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
@@ -46,7 +46,7 @@ public class calendarioFragment extends Fragment {
                              Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         preferencias preferencias=new preferencias();
-        Toast.makeText(getContext(),"Reload", Toast.LENGTH_SHORT).show();
+
 
         ConfigFragment configFragment=new ConfigFragment();
         View view = inflater.inflate(R.layout.fragment_calendario, container, false);

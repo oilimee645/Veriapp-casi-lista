@@ -118,7 +118,7 @@ public class ConfigFragment extends Fragment {
     void createNotification(String texto) {
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(getActivity().getApplicationContext(), CHANNEL_ID);
-        builder.setSmallIcon(R.mipmap.ic_launcher_foreground);
+        builder.setSmallIcon(R.mipmap.ic_launcher_round);
         builder.setContentTitle("Informacion Pendiente");
         builder.setContentText("Recuerda que inicia el periodo de verificación vehicular de la terminación de placa "+ texto +" primer semestre");
         builder.setColor(Color.BLUE);
