@@ -33,7 +33,7 @@ import android.widget.Toast;
 
 
 public class calendarioFragment extends Fragment {
-    int p;
+    int p=0;
     String texto="";
     private PendingIntent pendingIntent;
     private final static String CHANNEL_ID = "NOTIFICACION";

@@ -1,29 +1,25 @@
 package com.example.veriapp;
 
-import android.app.Notification;
-import android.app.NotificationChannel;
-import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.CompoundButton;
 import android.widget.Switch;
 
 import androidx.annotation.RequiresApi;
-import androidx.core.app.NotificationCompat;
-import androidx.core.app.NotificationManagerCompat;
 import androidx.fragment.app.Fragment;
+import com.google.firebase.messaging.FirebaseMessaging;
+import com.google.firebase.messaging.FirebaseMessagingService;
 
 
 public class ConfigFragment extends Fragment {
-    int p;
-    String texto="";
+    boolean s1, s2, s3, s4, s5;
+    int p=0;
+    String texto = "";
     private PendingIntent pendingIntent;
     private final static String CHANNEL_ID = "NOTIFICACION";
     private final static int NOTIFICACION_ID = 0;
@@ -33,8 +29,14 @@ public class ConfigFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.fragment_config, container, false);
 
+        View view = inflater.inflate(R.layout.fragment_config, container, false);
+        SharedPreferences preferencias = getActivity().getPreferences(Context.MODE_PRIVATE);
+        boolean valorSwitch5 = preferencias.getBoolean("switch5", false /* Valor default*/);
+        boolean valorSwitch4 = preferencias.getBoolean("switch4", false /* Valor default*/);
+        boolean valorSwitch3 = preferencias.getBoolean("switch3", false /* Valor default*/);
+        boolean valorSwitch2 = preferencias.getBoolean("switch2", false /* Valor default*/);
+        boolean valorSwitch1 = preferencias.getBoolean("switch1", false /* Valor default*/);
 
         p = cargarpreferencias();
 
@@ -44,45 +46,137 @@ public class ConfigFragment extends Fragment {
         Switch switch4 = (Switch) view.findViewById(R.id.switch4);
         Switch switch5 = (Switch) view.findViewById(R.id.switch5);
 
+        switch5.setChecked(valorSwitch5);
+        switch4.setChecked(valorSwitch4);
+        switch3.setChecked(valorSwitch3);
+        switch1.setChecked(valorSwitch1);
+        switch2.setChecked(valorSwitch2);
+
 
         if (p == 1 || p == 10) {
 
             switch5.setChecked(true);
-            texto = " 0 y 9";
-            createNotification(texto);
-            createNotificationChannel();
-
-
+            FirebaseMessaging.getInstance().subscribeToTopic("5");
+            texto = " 0 y 9 ";
 
         } else if (p == 2 || p == 3) {
             switch4.setChecked(true);
+            FirebaseMessaging.getInstance().subscribeToTopic("4");
             texto = " 1 y 2";
-            createNotification(texto);
-            createNotificationChannel();
-
 
         } else if (p == 4 || p == 5) {
             switch3.setChecked(true);
+            FirebaseMessaging.getInstance().subscribeToTopic("3");
             texto = " 3 y 4";
-            createNotification(texto);
-            createNotificationChannel();
-
 
         } else if (p == 6 || p == 7) {
             switch1.setChecked(true);
+            FirebaseMessaging.getInstance().subscribeToTopic("1");
             texto = " 5 y 6";
-            createNotification(texto);
-            createNotificationChannel();
-
 
         } else if (p == 8 || p == 9) {
             switch2.setChecked(true);
+            FirebaseMessaging.getInstance().subscribeToTopic("2");
             texto = " 7 y 8";
-            createNotification(texto);
-            createNotificationChannel();
-
 
         }
+
+
+        switch1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if (switch1.isChecked()) {
+
+                    FirebaseMessaging.getInstance().subscribeToTopic("1");
+                    s1 = true;
+
+                } else {
+
+                    FirebaseMessaging.getInstance().unsubscribeFromTopic("1");
+                    s1 = false;
+
+                }
+                Guardarswitch1(s1);
+
+            }
+        });
+        switch2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if (switch2.isChecked()) {
+
+                    FirebaseMessaging.getInstance().subscribeToTopic("2");
+                    s2 = true;
+
+                } else {
+
+                    FirebaseMessaging.getInstance().unsubscribeFromTopic("2");
+                    s2 = false;
+
+                }
+                Guardarswitch2(s2);
+
+            }
+        });
+        switch3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if (switch3.isChecked()) {
+
+                    FirebaseMessaging.getInstance().subscribeToTopic("3");
+                    s3 = true;
+
+                } else {
+
+                    FirebaseMessaging.getInstance().unsubscribeFromTopic("3");
+                    s3 = false;
+
+                }
+                Guardarswitch3(s3);
+
+            }
+        });
+        switch4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if (switch4.isChecked()) {
+
+                    FirebaseMessaging.getInstance().subscribeToTopic("4");
+                    s4 = true;
+
+                } else {
+
+                    FirebaseMessaging.getInstance().unsubscribeFromTopic("4");
+                    s4 = false;
+
+                }
+                Guardarswitch4(s4);
+
+            }
+        });
+        switch5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if (switch5.isChecked()) {
+
+                    FirebaseMessaging.getInstance().subscribeToTopic("5");
+                    s5 = true;
+
+                } else {
+
+                    FirebaseMessaging.getInstance().unsubscribeFromTopic("5");
+                    s5 = false;
+
+                }
+                Guardarswitch5(s5);
+
+            }
+        });
 
 
         return view;
@@ -105,33 +199,39 @@ public class ConfigFragment extends Fragment {
 
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
-    void createNotificationChannel() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            CharSequence name = "Noticacion";
-            NotificationChannel notificationChannel = new NotificationChannel(CHANNEL_ID, name, NotificationManager.IMPORTANCE_DEFAULT);
-            NotificationManager notificationManager = (NotificationManager) getActivity().getSystemService(Context.NOTIFICATION_SERVICE);
-            notificationManager.createNotificationChannel(notificationChannel);
-        }
+    public void Guardarswitch1(boolean s1) {
+        SharedPreferences.Editor editor = getActivity().getPreferences(Context.MODE_PRIVATE).edit();
+
+        editor.putBoolean("switch1", s1);
+        editor.commit();
     }
 
-    void createNotification(String texto) {
+    public void Guardarswitch2(boolean s2) {
+        SharedPreferences.Editor editor = getActivity().getPreferences(Context.MODE_PRIVATE).edit();
 
-        NotificationCompat.Builder builder = new NotificationCompat.Builder(getActivity().getApplicationContext(), CHANNEL_ID);
-        builder.setSmallIcon(R.mipmap.ic_launcher_round);
-        builder.setContentTitle("Informacion Pendiente");
-        builder.setContentText("Recuerda que inicia el periodo de verificación vehicular de la terminación de placa "+ texto +" primer semestre");
-        builder.setColor(Color.BLUE);
-        builder.setStyle(new NotificationCompat.BigTextStyle()
-                .bigText("Recuerda que inicia el periodo de verificación vehicular de la terminación de placa "+ texto +" primer semestre"));
-        builder.setPriority(NotificationCompat.PRIORITY_DEFAULT);
-        builder.setLights(Color.MAGENTA, 1000, 1000);
-        builder.setVibrate(new long[]{1000, 1000, 1000, 1000, 1000});
-        builder.setDefaults(Notification.DEFAULT_SOUND);
-
-        NotificationManagerCompat notificationManagerCompat = NotificationManagerCompat.from(getActivity().getApplicationContext());
-        notificationManagerCompat.notify(NOTIFICACION_ID, builder.build());
-
+        editor.putBoolean("switch2", s2);
+        editor.commit();
     }
 
+    public void Guardarswitch3(boolean s3) {
+        SharedPreferences.Editor editor = getActivity().getPreferences(Context.MODE_PRIVATE).edit();
+
+        editor.putBoolean("switch3", s3);
+        editor.commit();
+    }
+
+    public void Guardarswitch4(boolean s4) {
+        SharedPreferences.Editor editor = getActivity().getPreferences(Context.MODE_PRIVATE).edit();
+
+        editor.putBoolean("switch4", s4);
+        editor.commit();
+    }
+
+    public void Guardarswitch5(boolean s5) {
+        SharedPreferences.Editor editor = getActivity().getPreferences(Context.MODE_PRIVATE).edit();
+
+        editor.putBoolean("switch5", s5);
+        editor.commit();
+    }
 }
+

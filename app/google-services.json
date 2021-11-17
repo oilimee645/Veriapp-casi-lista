@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "410184931492",
+    "project_id": "veriapp-d5b49",
+    "storage_bucket": "veriapp-d5b49.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:410184931492:android:fa99a5102c207b9ceeae31",
+        "android_client_info": {
+          "package_name": "com.example.veriapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "410184931492-82c9per5ic6m39im9kj6ghqbni640vqc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAXe_qYK1X-78O_floQG7i8md1poZG97hU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "410184931492-82c9per5ic6m39im9kj6ghqbni640vqc.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "410184931492-2cb6v9h0bl04b95fvbtpt8s1f7bio3g1.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "mx.emg.com.VeriApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
