@@ -58,7 +58,7 @@
 
     <TableLayout
         android:layout_width="340dp"
-        android:layout_height="244dp"
+        android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:background="@drawable/borde"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -93,7 +93,7 @@
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="40dp"
+                android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="Enero/Febrero - Julio/Agosto"
                 android:textSize="16sp"
@@ -109,7 +109,7 @@
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="40dp"
+                android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="Febrero/Marzo - Agosto/Septiembre"
                 android:textSize="16sp"
@@ -125,7 +125,7 @@
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="40dp"
+                android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="Marzo/Abril - Septiembre/Octubre"
                 android:textSize="16sp"
@@ -141,7 +141,7 @@
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="40dp"
+                android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="Abril/Mayo - Octubre/Noviembre"
                 android:textSize="16sp"
@@ -157,7 +157,7 @@
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="40dp"
+                android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="Mayo/Junio - Noviembre/Diciembre"
                 android:textSize="16sp"
